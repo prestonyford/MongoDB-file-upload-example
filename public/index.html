@@ -6,18 +6,26 @@
         <title>Sample Upload Files</title>
     </head>
     <body>
-        <form action="/upload" method="POST" enctype="multipart/form-data" >
-            <input type="text" name="name" placeholder="File name" />
-            <br>
-            <input type="file" name="foo" />
-            <br>
-            <input type="submit" value="Upload" />
-        </form>
+        <!-- <form action="/upload" method="POST" enctype="multipart/form-data" > -->
+        <div>
+            <fieldset>
+                <legend>Upload</legend>
+                <input id="upload-file-input" type="file" name="foo" accept="image/*" />
+                <br>
+                <button id="upload-submit-button" type="button" style="margin-top: 10px;">Upload</button>
+            </fieldset>
+        </div>
+        
+        <div>
+            <fieldset>
+                <legend>Download</legend>
+                <input id="download-filename-input" type="text" placeholder="File name (with extension)" />
+                <button id="download-button" type="button">Display</button>
+                <br>
+                <img id="image-display" height="128" width="128" style="margin-top: 10px; border: black 1px dotted;">
+            </fieldset> 
+        </div>
 
-        <form id="download" action="/download" method="GET">
-            <input type="submit" value="Download" />
-        </form>
-
-        <script src="index.js"></script>
+        <script src="uploadfiles.js"></script>
     </body>
 </html>
